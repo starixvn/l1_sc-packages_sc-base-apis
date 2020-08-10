@@ -1,0 +1,27 @@
+{
+    "name": "sc-base-apis",
+    "version": "1.4.0",
+    "description": "",
+    "main": "index.js",
+    "publishConfig": {
+        "registry": "http://npm.lumigame.com"
+    },
+    "scripts": {
+        "reg": "npm set registry http://npm.lumigame.com",
+        "verpatch": "npm version patch",
+        "verminor": "npm version minor",
+        "pub": "npm publish --registry http://npm.lumigame.com",
+        "unpub": "npm unpublish --force sc-base-apis"
+    },
+    "author": {
+        "email": "harrison.nguyen@luminetsoft.com",
+        "name": "harrison.nguyen"
+    },
+    "dependencies": {
+        "moment": "^2.27.0",
+        "sc-api-client": "^1.0.0",
+        "sc-base-database": "^1.1.0",
+        "sc-common": "^1.3.0"
+    },
+    "type": "module"
+}
