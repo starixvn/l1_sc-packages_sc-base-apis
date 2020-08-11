@@ -3,8 +3,6 @@ import { logger } from 'sc-common';
 import * as apiClient from './api-client.js';
 import { apiResult, getFailedResponse, isErrorResult, isSSOAccount } from './helpers.js';
 
-let apiSettings;
-
 const setUserRed = (userId, red) => {
     userInfos.updateOne({ id: userId }, { $set: { red: red } }).exec();
 };
@@ -19,14 +17,10 @@ const updateUserBalanceToDatabase = (userId, red) => {
     }
 };
 
-export const init = (settings) => {
-    apiSettings = settings;
-};
-
 export const getBalance = async (user, isUpdateUserBalance) => {
     let session = user.session;
 
-    if (apiSettings.enabledApi && isSSOAccount(session)) {
+    if (isSSOAccount(session)) {
         const balanceParams = {
             Seq: session.owSeq,
             SiteId: session.siteId,

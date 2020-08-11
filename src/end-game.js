@@ -4,15 +4,9 @@ import { logger } from 'sc-common';
 import * as apiClient from './api-client.js';
 import { apiResult, getFailedResponse, isErrorResult } from './helpers.js';
 
-let apiSettings = null;
-
-const init = (settings) => {
-    apiSettings = settings;
-};
-
 const endGame = async (userId, gameInfo, settleInfo) => {
     // red, redWin, redLost, redPlay
-    if (apiSettings.enabledApi && gameInfo.siteId && gameInfo.memberId > 0) {
+    if (gameInfo.siteId && gameInfo.memberId > 0) {
         const endGameParams = {
             GameRoundId: gameInfo.gameRoundId,
             GameTypeId: gameInfo.gameId,
@@ -26,11 +20,7 @@ const endGame = async (userId, gameInfo, settleInfo) => {
             FreeBet: settleInfo.freeBet,
         };
 
-        const beforeMessage = logger.composeBeforeCallMessage(
-            { userId: userId },
-            endGameParams,
-            apiSettings.enabledApiLogs
-        );
+        const beforeMessage = logger.composeBeforeCallMessage({ userId: userId }, endGameParams, true);
 
         const result = await apiClient.endGame(endGameParams, beforeMessage);
 

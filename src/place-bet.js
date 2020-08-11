@@ -3,12 +3,6 @@ import * as apiClient from './api-client.js';
 import { getBalance, getCoinBalance } from './get-balance.js';
 import { apiResult, getFailedResponse, isErrorResult, isSSOAccount } from './helpers.js';
 
-let apiSettings;
-
-export const init = (settings) => {
-    apiSettings = settings;
-};
-
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
     const betAmount = betInfo.cuoc >> 0;
@@ -49,7 +43,7 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams, userInfo) 
     const session = user.session;
 
     try {
-        if (apiSettings.enabledApi && isSSOAccount(session)) {
+        if (isSSOAccount(session)) {
             const beforeMessage = '';
             const response = await apiClient.placeBet(placeBetParams, beforeMessage);
             return handlePlaceBetResponse(user, response, placeBetParams);

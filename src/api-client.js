@@ -1,6 +1,3 @@
-//const apiSettings = require("./../../../config/appConfigs").apiSettings;
-//const l1Client = require("l1.client.node-js")(apiSettings);
-//const logger = require("./../../web/logger").getLogger();
 import APIClient from 'sc-api-client';
 import { logger } from 'sc-common';
 
