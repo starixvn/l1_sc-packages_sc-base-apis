@@ -1,6 +1,6 @@
 {
     "name": "sc-base-apis",
-    "version": "1.4.2",
+    "version": "1.5.0-table-game-base",
     "description": "",
     "main": "./src/index.js",
     "publishConfig": {
