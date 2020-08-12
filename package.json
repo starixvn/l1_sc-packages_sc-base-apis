@@ -1,6 +1,6 @@
 {
     "name": "sc-base-apis",
-    "version": "1.4.0",
+    "version": "1.4.2",
     "description": "",
     "main": "index.js",
     "publishConfig": {
@@ -11,6 +11,7 @@
         "verpatch": "npm version patch",
         "verminor": "npm version minor",
         "pub": "npm publish --registry http://npm.lumigame.com",
+        "pubbeta": "npm publish --registry http://npm.lumigame.com --tag beta",
         "unpub": "npm unpublish --force sc-base-apis"
     },
     "author": {
