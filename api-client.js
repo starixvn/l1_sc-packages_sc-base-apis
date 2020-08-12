@@ -57,7 +57,7 @@ export const getBalance = async (getBalanceParams, beforeMessage) => {
                 response,
                 beforeMessage,
                 getLogLevel(response),
-                apiSettings.enableApiLogs
+                apiSettings.enabledApiLogs
             );
         }
 
@@ -72,7 +72,7 @@ export const getBalance = async (getBalanceParams, beforeMessage) => {
             error,
             beforeMessage,
             'error',
-            apiSettings.enableApiLogs
+            apiSettings.enabledApiLogs
         );
         logger.logError(error);
 
@@ -93,7 +93,7 @@ export const placeBet = async (placeBetParams, beforeMessage) => {
                 response,
                 beforeMessage,
                 getLogLevel(response),
-                apiSettings.enableApiLogs
+                apiSettings.enabledApiLogs
             );
         }
 
@@ -113,7 +113,7 @@ export const endGame = async (endGameParams, beforeMessage) => {
                 response,
                 beforeMessage,
                 getLogLevel(response),
-                apiSettings.enableApiLogs
+                apiSettings.enabledApiLogs
             );
         }
 
@@ -125,7 +125,7 @@ export const endGame = async (endGameParams, beforeMessage) => {
             error,
             beforeMessage,
             'error',
-            apiSettings.enableApiLogs
+            apiSettings.enabledApiLogs
         );
         logger.logError(error);
 
@@ -144,7 +144,7 @@ export const notifyLogin = async (notifyLoginParams, beforeMessage) => {
                 response,
                 beforeMessage,
                 getLogLevel(response),
-                apiSettings.enableApiLogs
+                apiSettings.enabledApiLogs
             );
         }
     } catch (error) {
@@ -154,7 +154,7 @@ export const notifyLogin = async (notifyLoginParams, beforeMessage) => {
             error,
             beforeMessage,
             'error',
-            apiSettings.enableApiLogs
+            apiSettings.enabledApiLogs
         );
         logger.logError(error);
 
