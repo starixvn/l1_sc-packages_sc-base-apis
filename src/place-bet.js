@@ -1,87 +1,63 @@
-import { logger } from 'sc-common';
-import * as apiClient from './api-client.js';
-import { getBalance, getCoinBalance } from './get-balance.js';
-import { apiResult, getFailedResponse, isErrorResult, isSSOAccount } from './helpers.js';
+import { userInfos } from "sc-base-database";
+import { placeBet } from "./api-client.js";
+import { getBalance, getCoinBalance } from "./get-balance.js";
+import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
-    const betAmount = betInfo.cuoc >> 0;
+    const betAmount = betInfo.cuoc;
+    const userBalance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
 
-    const result = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
-
-    if (!result.isOk) {
-        return result;
+    if (!userBalance.isOk) {
+        return userBalance;
     }
 
-    const userBalance = result;
-
-    if (!result || result.response.red < betAmount) {
-        return apiResult({ isOk: false, responseData: { inSufficientBalance: true } });
+    if (userBalance.response.red < betAmount) {
+        return apiResult({ isOk: false, response: { inSufficientBalance: true } });
     }
 
-    const placeBetParams = session
-        ? {
-              SiteId: session.siteId,
-              GameRoundId: betInfo.gameRoundId,
-              GameTypeId: betInfo.gameId,
-              ChoiceId: betInfo.choiceId,
-              Amount: betInfo.freeBet ? 0 : betAmount,
-              Currency: session.currency,
-              ObCustId: session.memberId,
-              Ip: session.ip,
-              Language: session.language,
-              RoundEndTime: betInfo.roundEndTime,
-              FreeBet: betInfo.freeBet,
-          }
-        : {};
+    const placeBetParams = {
+        SiteId: session.siteId,
+        GameRoundId: betInfo.gameRoundId,
+        GameTypeId: betInfo.gameId,
+        ChoiceId: betInfo.choiceId,
+        Amount: betInfo.freeBet ? 0 : betAmount,
+        Currency: session.currency,
+        ObCustId: session.memberId,
+        Ip: session.ip,
+        Language: session.language,
+        RoundEndTime: betInfo.roundEndTime,
+        FreeBet: betInfo.freeBet,
+    };
 
     // TODO: Handle for taixiu game type later
     return placeBetWithValidAmount(user, betInfo, placeBetParams, userBalance);
 };
 
 const placeBetWithValidAmount = async (user, betInfo, placeBetParams, userInfo) => {
-    const session = user.session;
+    const response = await apiClient.placeBet(placeBetParams);
 
-    try {
-        if (isSSOAccount(session)) {
-            const beforeMessage = '';
-            const response = await apiClient.placeBet(placeBetParams, beforeMessage);
-            return handlePlaceBetResponse(user, response, placeBetParams);
-        } else {
-            // Internal Account
-            userInfo.red -= betInfo.cuoc;
-            userInfo.save();
+    if (isErrorResult(response)) {
+        const extraFailedData = {
+            gameTypeId: placeBetParams.GameTypeId,
+            isPlaceBetFailed: true,
+            gameRoundId: placeBetParams.GameRoundId,
+        };
 
-            return apiResult({ isOk: true, responseData: userInfo });
-        }
-    } catch (error) {
-        logger.logError(error);
-        return apiResult({ isOk: false });
+        return getFailedResponse(response, extraFailedData);
     }
-};
 
-const handlePlaceBetResponse = (user, response, placeBetParams) => {
-    try {
-        if (isErrorResult(response)) {
-            const extraFailedData = {
-                gameTypeId: placeBetParams.GameTypeId,
-                isPlaceBetFailed: true,
-                gameRoundId: placeBetParams.GameRoundId,
-            };
-
-            return getFailedResponse(response, extraFailedData);
-        }
-
-        // setUserRed(user.id, placeBetResult.balance);
-        return apiResult({
-            isOk: true,
-            responseData: {
-                id: user.id,
-                red: response.balance,
-            },
-        });
-    } catch (error) {
-        logger.logError(error);
-        return apiResult({ isOk: false });
+    if (betInfo.freeBet) {
+        userInfos.updateOne({ id: user.id }, { $inc: { coins: -betInfo.cuoc } });
     }
+
+    userInfos.updateOne({ id: user.id }, { $set: { red: response.balance } });
+
+    return apiResult({
+        isOk: true,
+        response: {
+            id: user.id,
+            red: response.balance,
+        },
+    });
 };

@@ -1,7 +1,7 @@
 {
     "name": "sc-base-apis",
-    "version": "1.5.0-table-game-base",
-    "description": "",
+    "version": "1.5.0",
+    "description": "Saba API client wrapper for Node.js game services.",
     "main": "./src/index.js",
     "publishConfig": {
         "registry": "http://npm.lumigame.com"
@@ -10,19 +10,20 @@
         "reg": "npm set registry http://npm.lumigame.com",
         "verpatch": "npm version patch",
         "verminor": "npm version minor",
+        "betaver": "npm version prerelease --preid beta",
         "pub": "npm publish --registry http://npm.lumigame.com",
         "pubbeta": "npm publish --registry http://npm.lumigame.com --tag beta",
         "unpub": "npm unpublish --force sc-base-apis"
     },
     "author": {
-        "email": "harrison.nguyen@luminetsoft.com",
-        "name": "harrison.nguyen"
+        "email": "pentagon@luminetsoft.com",
+        "name": "pentagon"
     },
+    "type": "module",
     "dependencies": {
         "moment": "^2.27.0",
-        "sc-api-client": "^1.0.0",
-        "sc-base-database": "^1.1.0",
-        "sc-common": "^1.3.0"
-    },
-    "type": "module"
+        "sc-api-client": "^1.1.0-beta.1",
+        "sc-base-database": "1.3.0",
+        "sc-common": "1.3.2"
+    }
 }

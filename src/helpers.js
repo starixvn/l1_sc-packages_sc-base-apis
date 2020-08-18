@@ -1,16 +1,8 @@
-import { helpers } from 'sc-common';
+import { helpers } from "sc-common";
 
-export const isSSOAccount = (session) => {
-    return !!session.siteId;
-};
+export const isDisabledAccountResult = (result) => result.errorCode === 2002;
 
-export const isDisabledAccountResult = (result) => {
-    return result.errorCode == 2002;
-};
-
-export const isErrorResult = (result) => {
-    return result.errorCode != 0;
-};
+export const isErrorResult = (result) => result.errorCode !== 0;
 
 export const getFailedResponse = (response, extraInfo) => {
     const isKickedOut = isDisabledAccountResult(response);
@@ -27,9 +19,7 @@ export const getFailedResponse = (response, extraInfo) => {
         },
     };
 
-    return apiResult({ isOk: false, responseData: isKickedOut ? kickOutResponse : otherResponse });
+    return apiResult({ isOk: false, response: isKickedOut ? kickOutResponse : otherResponse });
 };
 
-export const apiResult = ({ isOk, responseData }) => {
-    return { isOk, response: responseData };
-};
+export const apiResult = ({ isOk, response }) => ({ isOk, response });

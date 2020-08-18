@@ -1,40 +1,38 @@
-import moment from 'moment';
-import { userInfos } from 'sc-base-database';
-import { logger } from 'sc-common';
-import * as apiClient from './api-client.js';
-import { apiResult, getFailedResponse, isErrorResult } from './helpers.js';
+import moment from "moment";
+import { userInfos } from "sc-base-database";
+import { logger } from "sc-common";
+import { endGame } from "./api-client.js";
+import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
-const endGame = async (userId, gameInfo, settleInfo) => {
-    // red, redWin, redLost, redPlay
-    if (gameInfo.siteId && gameInfo.memberId > 0) {
-        const endGameParams = {
-            GameRoundId: gameInfo.gameRoundId,
-            GameTypeId: gameInfo.gameId,
-            ObCustId: gameInfo.memberId,
-            SiteId: gameInfo.siteId,
-            TotalAmount: settleInfo.freeBet ? 0 : settleInfo.redPlay,
-            TotalWin: settleInfo.freeBet ? settleInfo.red - settleInfo.redPlay : settleInfo.red,
-            // Currently not support
-            ValidBetAmount: settleInfo.freeBet ? 0 : settleInfo.redPlay,
-            EndTime: moment.utc(gameInfo.time) || moment.utc(),
-            FreeBet: settleInfo.freeBet,
+export const endGame = async (userId, gameInfo, settleInfo) => {
+    const betAmount = settleInfo.freeBet ? 0 : settleInfo.redPlay;
+    const endGameParams = {
+        GameRoundId: gameInfo.gameRoundId,
+        GameTypeId: gameInfo.gameId,
+        ObCustId: gameInfo.memberId,
+        SiteId: gameInfo.siteId,
+        TotalAmount: betAmount,
+        TotalWin: settleInfo.red,
+        ValidBetAmount: betAmount,
+        EndTime: moment.utc(gameInfo.time),
+        FreeBet: settleInfo.freeBet,
+    };
+    const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
+    const result = await endGame(endGameParams, beforeMessage);
+
+    if (isErrorResult(result)) {
+        const extraFailedData = {
+            gameTypeId: endGameParams.GameTypeId,
+            gameRoundId: endGameParams.GameRoundId,
         };
 
-        const beforeMessage = logger.composeBeforeCallMessage({ userId: userId }, endGameParams, true);
-
-        const result = await apiClient.endGame(endGameParams, beforeMessage);
-
-        if (isErrorResult(result)) {
-            const extraFailedData = { gameTypeId: endGameParams.GameTypeId, gameRoundId: endGameParams.GameRoundId };
-            return getFailedResponse(result, extraFailedData);
-        } else {
-            await userInfos.updateOne({ id: userId }, { $inc: settleInfo });
-        }
-    } else {
-        await userInfos.updateOne({ id: userId }, { $inc: settleInfo }).exec();
+        return getFailedResponse(result, extraFailedData);
     }
+
+    const redAdjustments = { ...settleInfo };
+
+    delete redAdjustments.freeBet;
+    await userInfos.updateOne({ id: userId }, { $inc: redAdjustments });
 
     return apiResult({ isOk: true });
 };
-
-export { init, endGame };
