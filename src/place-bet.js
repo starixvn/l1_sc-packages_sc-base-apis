@@ -1,8 +1,8 @@
-import { userInfos } from 'sc-base-database';
+import { userInfos } from "sc-base-database";
 
-import * as APIClient from './api-client.js';
-import { getCoinBalance } from './get-balance.js';
-import { apiResult, getFailedResponse, isErrorResult } from './helpers.js';
+import * as APIClient from "./api-client.js";
+import { getCoinBalance } from "./get-balance.js";
+import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
@@ -32,10 +32,10 @@ export const placeBet = async (user, betInfo) => {
     };
 
     // TODO: Handle for taixiu game type later
-    return placeBetWithValidAmount(user, betInfo, placeBetParams, userBalance);
+    return placeBetWithValidAmount(user, betInfo, placeBetParams);
 };
 
-const placeBetWithValidAmount = async (user, betInfo, placeBetParams, userInfo) => {
+const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
     const response = await apiClient.placeBet(placeBetParams);
 
     if (isErrorResult(response)) {

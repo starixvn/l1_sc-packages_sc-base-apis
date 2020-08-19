@@ -1,8 +1,8 @@
-import { userInfos } from 'sc-base-database';
-import { logger } from 'sc-common';
+import { userInfos } from "sc-base-database";
+import { logger } from "sc-common";
 
-import * as APIClient from './api-client.js';
-import { apiResult, getFailedResponse, isErrorResult } from './helpers.js';
+import * as APIClient from "./api-client.js";
+import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
 export const getBalance = async (user, isUpdateUserBalance) => {
     const session = user.session;
@@ -20,7 +20,7 @@ export const getBalance = async (user, isUpdateUserBalance) => {
     }
 
     if (isUpdateUserBalance) {
-        await userInfos.updateOne({ id: userId }, { $set: { red: red } });
+        await userInfos.updateOne({ id: user.id }, { $set: { red: response.red } });
     }
 
     return apiResult({ isOk: true, response });
