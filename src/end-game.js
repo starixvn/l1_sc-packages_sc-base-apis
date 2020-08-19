@@ -1,8 +1,9 @@
-import moment from "moment";
-import { userInfos } from "sc-base-database";
-import { logger } from "sc-common";
-import { endGame } from "./api-client.js";
-import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
+import moment from 'moment';
+import { userInfos } from 'sc-base-database';
+import { logger } from 'sc-common';
+
+import * as APIClient from './api-client.js';
+import { apiResult, getFailedResponse, isErrorResult } from './helpers.js';
 
 export const endGame = async (userId, gameInfo, settleInfo) => {
     const betAmount = settleInfo.freeBet ? 0 : settleInfo.redPlay;
@@ -18,7 +19,7 @@ export const endGame = async (userId, gameInfo, settleInfo) => {
         FreeBet: settleInfo.freeBet,
     };
     const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
-    const result = await endGame(endGameParams, beforeMessage);
+    const result = await APIClient.endGame(endGameParams, beforeMessage);
 
     if (isErrorResult(result)) {
         const extraFailedData = {

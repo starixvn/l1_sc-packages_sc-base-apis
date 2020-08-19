@@ -1,7 +1,8 @@
-import { userInfos } from "sc-base-database";
-import { logger } from "sc-common";
-import { getBalance } from "./api-client.js";
-import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
+import { userInfos } from 'sc-base-database';
+import { logger } from 'sc-common';
+
+import * as APIClient from './api-client.js';
+import { apiResult, getFailedResponse, isErrorResult } from './helpers.js';
 
 export const getBalance = async (user, isUpdateUserBalance) => {
     const session = user.session;
@@ -12,7 +13,7 @@ export const getBalance = async (user, isUpdateUserBalance) => {
         Language: session.language,
     };
     const beforeMessage = logger.composeBeforeCallMessage(session, balanceParams);
-    const response = await getBalance(balanceParams, beforeMessage);
+    const response = await APIClient.getBalance(balanceParams, beforeMessage);
 
     if (isErrorResult(response)) {
         return getFailedResponse(response);
