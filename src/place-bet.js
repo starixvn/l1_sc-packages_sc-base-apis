@@ -1,13 +1,13 @@
 import { userInfos } from "sc-base-database";
 
 import * as APIClient from "./api-client.js";
-import { getCoinBalance } from "./get-balance.js";
+import { getBalance, getCoinBalance } from "./get-balance.js";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
     const betAmount = betInfo.cuoc;
-    const userBalance = betInfo.freeBet ? await getCoinBalance(user) : await APIClient.getBalance(user);
+    const userBalance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
 
     if (!userBalance.isOk) {
         return userBalance;
@@ -36,7 +36,7 @@ export const placeBet = async (user, betInfo) => {
 };
 
 const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
-    const response = await apiClient.placeBet(placeBetParams);
+    const response = await APIClient.placeBet(placeBetParams);
 
     if (isErrorResult(response)) {
         const extraFailedData = {
