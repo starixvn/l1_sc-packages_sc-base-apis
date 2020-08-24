@@ -6,14 +6,14 @@ import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
-    const betAmount = betInfo.cuoc;
-    const userBalance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
+    const betAmount = betInfo.amount;
+    const balance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
 
-    if (!userBalance.isOk) {
-        return userBalance;
+    if (!balance.isOk) {
+        return balance;
     }
 
-    if (userBalance.response.red < betAmount) {
+    if (balance.response.red < betAmount) {
         return apiResult({ isOk: false, response: { inSufficientBalance: true } });
     }
 
@@ -49,7 +49,7 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
     }
 
     if (betInfo.freeBet) {
-        userInfos.updateOne({ id: user.id }, { $inc: { coins: -betInfo.cuoc } });
+        userInfos.updateOne({ id: user.id }, { $inc: { coins: -betInfo.amount } });
     }
 
     userInfos.updateOne({ id: user.id }, { $set: { red: response.balance } });

@@ -4,7 +4,7 @@ import { logger } from "sc-common";
 import * as APIClient from "./api-client.js";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
 
-export const getBalance = async (user, isUpdateUserBalance) => {
+export const getBalance = async (user, captureBalance) => {
     const session = user.session;
     const balanceParams = {
         Seq: session.owSeq,
@@ -19,7 +19,7 @@ export const getBalance = async (user, isUpdateUserBalance) => {
         return getFailedResponse(response);
     }
 
-    if (isUpdateUserBalance) {
+    if (captureBalance) {
         await userInfos.updateOne({ id: user.id }, { $set: { red: response.red } });
     }
 
