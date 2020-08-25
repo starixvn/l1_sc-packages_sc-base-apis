@@ -1,8 +1,8 @@
 import { userInfos } from "sc-base-database";
 import { logger } from "sc-common";
 
-import * as APIClient from "./api-client.js";
-import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
+import * as APIClient from "./api-client";
+import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const getBalance = async (user, captureBalance) => {
     const session = user.session;

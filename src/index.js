@@ -1,6 +1,6 @@
-import { init } from "./api-client.js";
-import { endGame } from "./end-game.js";
-import { getBalance } from "./get-balance.js";
-import { placeBet } from "./place-bet.js";
+import { init } from "./api-client";
+import { endGame } from "./end-game";
+import { getBalance } from "./get-balance";
+import { placeBet } from "./place-bet";
 
 export { init, getBalance, placeBet, endGame };

@@ -1,8 +1,8 @@
 import { userInfos } from "sc-base-database";
 
-import * as APIClient from "./api-client.js";
-import { getBalance, getCoinBalance } from "./get-balance.js";
-import { apiResult, getFailedResponse, isErrorResult } from "./helpers.js";
+import * as APIClient from "./api-client";
+import { getBalance, getCoinBalance } from "./get-balance";
+import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
