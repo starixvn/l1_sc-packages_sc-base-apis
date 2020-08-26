@@ -59,6 +59,7 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
         response: {
             id: user.id,
             red: response.balance,
+            coins: betInfo.freeBet ? (await getCoinBalance(user)).response.red : 0,
         },
     });
 };
