@@ -48,18 +48,16 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
         return getFailedResponse(response, extraFailedData);
     }
 
-    if (betInfo.freeBet) {
-        userInfos.updateOne({ id: user.id }, { $inc: { coins: -betInfo.amount } });
-    }
+    const scoinsIncreament = betInfo.freeBet ? { scoins: -betInfo.amount } : {};
 
-    userInfos.updateOne({ id: user.id }, { $set: { red: response.balance } });
+    userInfos.updateOne({ id: user.id }, { $set: { red: response.balance }, $inc: scoinsIncreament });
 
     return apiResult({
         isOk: true,
         response: {
             id: user.id,
             red: response.balance,
-            coins: betInfo.freeBet ? (await getCoinBalance(user)).response.red : 0,
+            scoins: betInfo.freeBet ? (await getCoinBalance(user)).response.red : 0,
         },
     });
 };
