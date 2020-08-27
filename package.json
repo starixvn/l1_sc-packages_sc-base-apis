@@ -1,6 +1,6 @@
 {
     "name": "sc-base-apis",
-    "version": "1.6.0-dev-TableGameBase.2",
+    "version": "1.6.0-dev-TableGameBase.3",
     "description": "Saba API client wrapper for Node.js game services.",
     "main": "./src/index.js",
     "publishConfig": {
@@ -24,7 +24,7 @@
     "dependencies": {
         "moment": "^2.27.0",
         "sc-api-client": "^1.1.0",
-        "sc-base-database": "1.3.0",
+        "sc-base-database": "1.3.0-dev-FreeBet.1",
         "sc-common": "1.3.2"
     },
     "devDependencies": {
