@@ -29,5 +29,5 @@ export const getBalance = async (user, captureBalance) => {
 export const getCoinBalance = async (user) => {
     const userInfo = await userInfos.findOne({ id: user.id }, "scoins").lean().exec();
 
-    return apiResult({ isOk: true, response: { red: userInfo.scoins } });
+    return apiResult({ isOk: true, response: { red: userInfo.scoins ?? 0 } });
 };

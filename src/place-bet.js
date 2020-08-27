@@ -55,7 +55,6 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
     return apiResult({
         isOk: true,
         response: {
-            id: user.id,
             red: response.balance,
             scoins: betInfo.freeBet ? (await getCoinBalance(user)).response.red : 0,
         },
