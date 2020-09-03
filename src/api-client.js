@@ -72,7 +72,7 @@ export const getBalance = async (getBalanceParams, beforeMessage) => {
     }
 };
 
-export const placeBet = async (placeBetParams = "") => {
+export const placeBet = async (placeBetParams = "", beforeMessage = "") => {
     try {
         const response = await apiClient.member.placeBet(placeBetParams, {
             requestTimeout: apiSettings.placeBetTimeout,
@@ -91,6 +91,8 @@ export const placeBet = async (placeBetParams = "") => {
 
         return response.result;
     } catch (error) {
+        logger.logAfterSendToApi("Error Place Bet", placeBetParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
+        logger.logError(error);
         return errors.placeBetFailed;
     }
 };

@@ -1,4 +1,5 @@
 import { userInfos } from "sc-base-database";
+import { logger } from "sc-common";
 
 import * as APIClient from "./api-client";
 import { getBalance, getCoinBalance } from "./get-balance";
@@ -36,7 +37,8 @@ export const placeBet = async (user, betInfo) => {
 };
 
 const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
-    const response = await APIClient.placeBet(placeBetParams);
+    const beforeMessage = logger.composeBeforeCallMessage(user.session, placeBetParams);
+    const response = await APIClient.placeBet(placeBetParams, beforeMessage);
 
     if (isErrorResult(response)) {
         const extraFailedData = {
