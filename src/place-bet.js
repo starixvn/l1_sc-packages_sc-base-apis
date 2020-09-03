@@ -58,7 +58,7 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
         isOk: true,
         response: {
             red: response.balance,
-            scoins: betInfo.freeBet ? (await getCoinBalance(user)).response.red : 0,
+            scoins: (await getCoinBalance(user)).response.red,
         },
     });
 };
