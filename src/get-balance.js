@@ -20,7 +20,7 @@ export const getBalance = async (user, captureBalance) => {
     }
 
     if (captureBalance) {
-        await userInfos.updateOne({ id: user.id }, { $set: { red: response.red } });
+        await userInfos.updateOne({ id: session.userId }, { $set: { red: response.red } });
     }
 
     return apiResult({ isOk: true, response });
