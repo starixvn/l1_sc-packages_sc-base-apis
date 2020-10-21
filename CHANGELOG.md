@@ -1,3 +1,15 @@
+# [1.7.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.6.0...v1.7.0) (2020-10-21)
+
+
+### Bug Fixes
+
+* upgrade sc-base-database package ([faecbcd](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/faecbcde2f66f7b08ae8c1912e6dd8bb2ab123af))
+
+
+### Features
+
+* update release package ([e60f92c](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/e60f92c97cd738e0e3c3744ab05482e710b50423))
+
 # [1.6.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.5.3...v1.6.0) (2020-09-16)
 
 
