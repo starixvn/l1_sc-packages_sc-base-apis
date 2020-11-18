@@ -23,16 +23,16 @@ export const placeBet = async (user, betInfo) => {
         GameRoundId: betInfo.gameRoundId,
         GameTypeId: betInfo.gameId,
         ChoiceId: betInfo.choiceId,
-        Amount: betInfo.freeBet ? 0 : betAmount,
+        Amount: betInfo.freeBet || betInfo.freeSpin ? 0 : betAmount,
         Currency: session.currency,
         ObCustId: session.memberId,
         Ip: session.ip,
         Language: session.language,
         RoundEndTime: betInfo.roundEndTime,
         FreeBet: betInfo.freeBet,
+        FreeSpin: betInfo.freeSpin,
     };
 
-    // TODO: Handle for taixiu game type later
     return placeBetWithValidAmount(user, betInfo, placeBetParams);
 };
 
