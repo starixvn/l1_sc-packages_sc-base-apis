@@ -27,6 +27,10 @@ const errors = {
     },
 };
 const warningErrorCodes = [3003, 3004, 3006, 3007, 3008, 3009, 3014, 2002, 2005, 3010, 3013, 3002];
+const successfulResponse = {
+    errorCode: "0",
+    errorMessage: "",
+};
 
 const isError = (response) => (response?.result?.errorCode ?? 0) !== 0;
 
@@ -128,6 +132,8 @@ export const notifyLogin = async (notifyLoginParams, beforeMessage) => {
                 apiSettings.enabledApiLogs
             );
         }
+
+        return successfulResponse;
     } catch (error) {
         logger.logAfterSendToApi("Error Notify Login", notifyLoginParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
         logger.logError(error);
@@ -138,12 +144,10 @@ export const notifyLogin = async (notifyLoginParams, beforeMessage) => {
 
 export const verifyToken = async (verifyTokenParams) => {
     try {
-        const result = await apiClient.auth.verifyToken(verifyTokenParams);
-
-        return result;
+        return await apiClient.auth.verifyToken(verifyTokenParams);
     } catch (ex) {
         logger.logError(ex);
 
-        return null;
+        return errors.enterPortalFailed;
     }
 };
