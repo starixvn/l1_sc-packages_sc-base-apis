@@ -1,3 +1,15 @@
+# [1.8.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.7.0...v1.8.0) (2020-12-23)
+
+
+### Bug Fixes
+
+* fix SonarQube warnings ([dbd9e8a](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/dbd9e8a0fa50451f2041db7c99d6108e633c5bb5))
+
+
+### Features
+
+* add FreeSpin for place bet api ([b306c69](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/b306c69cac19c93f0e32a13222f8871e43df0d0e))
+
 # [1.7.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.6.0...v1.7.0) (2020-10-21)
 
 
