@@ -42,10 +42,11 @@ const getLogLevel = (response) => {
     return "info";
 };
 
-export const init = (settings) => {
+export const init = async (settings) => {
     apiSettings = settings;
     apiClient = new APIClient(settings, logger);
-    apiClient.autoUpdateToken();
+
+    await apiClient.autoUpdateToken();
 };
 
 export const getBalance = async (getBalanceParams, beforeMessage) => {
