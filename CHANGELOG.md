@@ -1,3 +1,10 @@
+## [1.8.1](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.8.0...v1.8.1) (2020-12-25)
+
+
+### Bug Fixes
+
+* init must be async ([2326903](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/2326903b79fa00ebf5016d4ed3a4ca067cb731e4))
+
 # [1.8.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.7.0...v1.8.0) (2020-12-23)
 
 
