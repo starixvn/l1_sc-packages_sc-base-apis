@@ -152,3 +152,26 @@ export const verifyToken = async (verifyTokenParams) => {
         return errors.enterPortalFailed;
     }
 };
+
+export const hitJackpot = async (hitJackpotParams = "", beforeMessage = "") => {
+    try {
+        const response = await apiClient.member.hitJackpot(hitJackpotParams);
+
+        if (isError(response)) {
+            logger.logAfterSendToApi(
+                "Hit Jackpot",
+                hitJackpotParams,
+                response,
+                beforeMessage,
+                getLogLevel(response),
+                apiSettings.enabledApiLogs
+            );
+        }
+
+        return response.result;
+    } catch (error) {
+        logger.logAfterSendToApi("Error Hit Jackpot", hitJackpotParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
+        logger.logError(error);
+        return errors.placeBetFailed;
+    }
+};
