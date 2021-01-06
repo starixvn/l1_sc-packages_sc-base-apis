@@ -1,23 +1,17 @@
 import { logger } from "sc-common";
 
 import * as APIClient from "./api-client";
-import { getBalance } from "./get-balance";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const hitJackpot = async (user, jackpotInfo) => {
     const session = user.session;
-    const balance = await getBalance(user);
-
-    if (!balance.isOk) {
-        return balance;
-    }
 
     const hitJackpotParams = {
         SiteId: session.siteId,
+        ObCustId: session.memberId,
         GameRoundId: jackpotInfo.gameRoundId,
         GameTypeId: jackpotInfo.gameId,
         WinningAmount: jackpotInfo.winningAmount,
-        ObCustId: session.memberId,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(user.session, hitJackpotParams);
