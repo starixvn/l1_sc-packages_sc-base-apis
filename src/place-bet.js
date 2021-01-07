@@ -31,7 +31,7 @@ export const placeBet = async (user, betInfo) => {
         RoundEndTime: betInfo.roundEndTime,
         FreeBet: betInfo.freeBet,
         FreeSpin: betInfo.freeSpin,
-        ContributionRate: betInfo.contributtionRate,
+        ContributionRate: betInfo.contributionRate,
         ContributionAmount: betInfo.contributionAmount,
     };
 
