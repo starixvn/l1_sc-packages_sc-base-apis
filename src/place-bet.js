@@ -9,13 +9,10 @@ export const placeBet = async (user, betInfo) => {
     const session = user.session;
     const betAmount = betInfo.amount;
     const balance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
+    const balanceError = betInfo.freeSpin ? await validateBalance(balance) : null;
 
-    if (!balance.isOk) {
-        return balance;
-    }
-
-    if (balance.response.red < betAmount) {
-        return apiResult({ isOk: false, response: { inSufficientBalance: true } });
+    if (balanceError) {
+        return balanceError;
     }
 
     const placeBetParams = {
@@ -36,6 +33,18 @@ export const placeBet = async (user, betInfo) => {
     };
 
     return placeBetWithValidAmount(user, betInfo, placeBetParams);
+};
+
+const validateBalance = async (balance) => {
+    if (!balance.isOk) {
+        return balance;
+    }
+
+    if (balance.response.red < betAmount) {
+        return apiResult({ isOk: false, response: { inSufficientBalance: true } });
+    }
+
+    return null;
 };
 
 const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
