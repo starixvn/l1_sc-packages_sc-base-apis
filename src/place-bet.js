@@ -9,7 +9,7 @@ export const placeBet = async (user, betInfo) => {
     const session = user.session;
     const betAmount = betInfo.amount;
     const balance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
-    const balanceError = betInfo.freeSpin ? validateBalance(balance) : null;
+    const balanceError = betInfo.freeSpin ? null : validateBalance(balance);
 
     if (balanceError) {
         return balanceError;
