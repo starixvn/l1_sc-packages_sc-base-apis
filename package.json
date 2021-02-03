@@ -23,8 +23,8 @@
     "type": "module",
     "dependencies": {
         "moment": "^2.27.0",
-        "sc-api-client": "^1.1.0",
-        "sc-base-database": "^1.5.0",
+        "sc-api-client": "^1.2.0",
+        "sc-base-database": "^1.6.0-beta.0",
         "sc-common": "^1.5.0"
     },
     "devDependencies": {
