@@ -1,6 +1,6 @@
 {
     "name": "sc-base-apis",
-    "version": "1.8.1",
+    "version": "1.8.2-beta.0",
     "description": "Saba API client wrapper for Node.js game services.",
     "main": "./src/index.js",
     "publishConfig": {
