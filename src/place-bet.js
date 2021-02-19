@@ -28,8 +28,8 @@ export const placeBet = async (user, betInfo) => {
         RoundEndTime: betInfo.roundEndTime,
         FreeBet: betInfo.freeBet,
         FreeSpin: betInfo.freeSpin,
-        ContributionRate: betInfo.contributionRate,
-        ContributionAmount: betInfo.contributionAmount,
+        ContributionRate: betInfo.freeSpin ? 0 : betInfo.contributionRate,
+        ContributionAmount: betInfo.freeSpin ? 0 : betInfo.contributionAmount,
     };
 
     return placeBetWithValidAmount(user, betInfo, placeBetParams);
