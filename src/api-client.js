@@ -134,7 +134,7 @@ export const notifyLogin = async (notifyLoginParams, beforeMessage) => {
             );
         }
 
-        return successfulResponse;
+        return response.result;
     } catch (error) {
         logger.logAfterSendToApi("Error Notify Login", notifyLoginParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
         logger.logError(error);
