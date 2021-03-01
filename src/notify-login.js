@@ -22,7 +22,9 @@ export const notifyLogin = async (user, characterName, firstLogin) => {
     }
 
     const { minBet, maxBet } = response;
-    await userInfos.updateOne({ id: session.userId }, { minBet, maxBet });
+    if (minBet > 0 && maxBet > 0) {
+        await userInfos.updateOne({ id: session.userId }, { minBet, maxBet, betLimitModifiedDate: new Date() });
+    }
 
     return apiResult({ isOk: true, response });
 };
