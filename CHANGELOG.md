@@ -1,3 +1,21 @@
+# [1.9.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.8.1...v1.9.0) (2021-03-02)
+
+
+### Bug Fixes
+
+* notify login response ([92ccea3](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/92ccea321dff062fe5711dba73c4a3c73c02b752))
+* update package ([821a341](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/821a3410a8126048fed6bc353a0956357c76e639))
+
+
+### Features
+
+* add member stake level return from place bet response ([5232514](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/5232514ea99771ff9074eef7a2eb8feee970d470))
+* add notify-login ([19f1702](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/19f170275ad70ea6b7e9cf2728e6ca82c8c656b3))
+* notify login - only update min/max bet when they are greater than 0 ([ac773bc](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/ac773bcb0971cb706cb8b1e0751729c823010cd9))
+* update package ([f6c2e61](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/f6c2e6196e3ca7f42a910f6781e266bfe722474c))
+* update package ([9a75012](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/9a75012be5a4e8e990b83cea96db78405391974c))
+* update version sc-base-database ([ef7071c](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/ef7071c8c6cc7c048c2c51f7167eb88fa6fb727f))
+
 ## [1.8.1](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.8.0...v1.8.1) (2020-12-25)
 
 
