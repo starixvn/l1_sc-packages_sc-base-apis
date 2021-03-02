@@ -45,6 +45,8 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
             gameTypeId: placeBetParams.GameTypeId,
             isPlaceBetFailed: true,
             gameRoundId: placeBetParams.GameRoundId,
+            minBet: response.minBet,
+            maxBet: response.maxBet,
         };
 
         return getFailedResponse(response, extraFailedData);
@@ -59,6 +61,8 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
         response: {
             red: response.balance,
             scoins: (await getCoinBalance(user)).response.red,
+            minBet: response.minBet,
+            maxBet: response.maxBet,
         },
     });
 };

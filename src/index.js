@@ -2,5 +2,6 @@ import { init } from "./api-client";
 import { endGame } from "./end-game";
 import { getBalance } from "./get-balance";
 import { placeBet } from "./place-bet";
+import { notifyLogin } from "./notify-login";
 
-export { init, getBalance, placeBet, endGame };
+export { init, getBalance, placeBet, endGame, notifyLogin };
