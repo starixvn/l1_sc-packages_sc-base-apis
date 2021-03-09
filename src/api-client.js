@@ -184,3 +184,27 @@ export const hitJackpot = async (hitJackpotParams = "", beforeMessage = "") => {
         return errors.hitJackpotFailed;
     }
 };
+
+export const getBetLimit = async (getbetLimitParams, beforeMessage) => {
+    try {
+        const response = await apiClient.member.getBetLimit(getbetLimitParams);
+
+        if (isError(response)) {
+            logger.logAfterSendToApi(
+                "Get Bet Limit",
+                getbetLimitParams,
+                response,
+                beforeMessage,
+                getLogLevel(response),
+                apiSettings.enabledApiLogs
+            );
+        }
+
+        return response.result;
+    } catch (error) {
+        logger.logAfterSendToApi("Error Get Bet Limit ", getbetLimitParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
+        logger.logError(error);
+
+        return errors.enterPortalFailed;
+    }
+};
