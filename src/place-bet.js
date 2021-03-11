@@ -25,6 +25,7 @@ export const placeBet = async (user, betInfo) => {
         ObCustId: session.memberId,
         Ip: session.ip,
         Language: session.language,
+        System: session.system,
         RoundEndTime: betInfo.roundEndTime,
         FreeBet: betInfo.freeBet,
         FreeSpin: betInfo.freeSpin,
