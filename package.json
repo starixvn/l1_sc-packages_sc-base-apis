@@ -2,7 +2,7 @@
     "name": "sc-base-apis",
     "version": "1.9.3-beta.2",
     "description": "Saba API client wrapper for Node.js game services.",
-    "main": "index.js",
+    "main": "./src/index.js",
     "publishConfig": {
         "registry": "http://npm.lumigame.com"
     },
@@ -14,23 +14,20 @@
         "pub": "npm publish --registry http://npm.lumigame.com",
         "pubbeta": "npm publish --registry http://npm.lumigame.com --tag beta",
         "unpub": "npm unpublish --force sc-base-apis",
-        "semantic-release": "semantic-release",
-        "build": "babel src -d dist"
+        "semantic-release": "semantic-release"
     },
     "author": {
         "email": "pentagon@luminetsoft.com",
         "name": "pentagon"
     },
+    "type": "module",
     "dependencies": {
         "moment": "^2.27.0",
-        "sc-api-client": "^1.2.1-beta.3",
-        "sc-base-database": "^1.7.0-beta.4",
-        "sc-common": "^1.5.1-beta.2"
+        "sc-api-client": "^1.2.1-beta.1",
+        "sc-base-database": "^1.7.0-beta.3",
+        "sc-common": "^1.5.1-beta.0"
     },
     "devDependencies": {
-        "@babel/cli": "^7.13.10",
-        "@babel/core": "^7.13.10",
-        "@babel/preset-env": "^7.13.10",
         "@commitlint/cli": "^9.1.2",
         "@commitlint/config-conventional": "^9.1.2",
         "@semantic-release/changelog": "^5.0.1",
