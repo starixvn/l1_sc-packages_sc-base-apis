@@ -12,6 +12,7 @@ export const getBalance = async (user, captureBalance) => {
         ObCustId: session.memberId,
         Language: session.language,
     };
+
     const beforeMessage = logger.composeBeforeCallMessage(session, balanceParams);
     const response = await APIClient.getBalance(balanceParams, beforeMessage);
 
