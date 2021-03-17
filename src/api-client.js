@@ -21,6 +21,10 @@ const errors = {
         errorCode: `SB1903`,
         errorMessage: "Đã xảy ra lỗi. Vui lòng liên hệ bộ phận CSKH để đươc hỗ trợ.",
     },
+    hitJackpotFailed: {
+        errorCode: "SB1904",
+        errorMessage: "Dữ liệu đang được xử lý, giải thưởng Nổ Hũ sẽ được cập nhật vào tài khoản của bạn sau ít phút.",
+    },
     accountClosed: {
         errorCode: "2002",
         errorMessage: "Tài khoản của bạn đã bị khoá.",
@@ -150,5 +154,33 @@ export const verifyToken = async (verifyTokenParams) => {
         logger.logError(ex);
 
         return errors.enterPortalFailed;
+    }
+};
+
+export const hitJackpot = async (hitJackpotParams = "", beforeMessage = "") => {
+    try {
+        const response = await apiClient.member.hitJackpot(hitJackpotParams, {
+            requestTimeout: apiSettings.hitJackpotTimeout,
+        });
+
+        if (isError(response)) {
+            logger.logAfterSendToApi(
+                "Hit Jackpot",
+                hitJackpotParams,
+                response,
+                beforeMessage,
+                getLogLevel(response),
+                apiSettings.enabledApiLogs
+            );
+
+            return errors.hitJackpotFailed;
+        }
+
+        return response.result;
+    } catch (error) {
+        logger.logAfterSendToApi("Error Hit Jackpot", hitJackpotParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
+        logger.logCritical(error);
+
+        return errors.hitJackpotFailed;
     }
 };
