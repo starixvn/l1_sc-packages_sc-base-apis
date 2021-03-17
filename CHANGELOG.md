@@ -1,3 +1,26 @@
+# [1.10.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.9.0...v1.10.0) (2021-03-17)
+
+
+### Bug Fixes
+
+* add contribution params to place-bet ([f4ba1ea](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/f4ba1ea6697b8ba69075c7ef4978634293357724))
+* add hit jackpot error and time out setting ([2fdfaf2](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/2fdfaf2b79d59647db8543c8b435bc78fef9be73))
+* contribution must be 0 if freeSpin ([40f95ba](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/40f95ba3c43743a6af8c1f2d16a021f0cad5d6c9))
+* correct contribution rate ([8cd90a9](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/8cd90a97edba0c97dffb0212278083e01237545e))
+* export hit jackpot api ([dbe9bea](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/dbe9bea8392ea0692a5da01c60483717834107b7))
+* format code ([ac8ba43](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/ac8ba43b0a1ac9664c9bc5f739c06bdc01a2277c))
+* input bet amount for balance validation ([b1e53b0](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/b1e53b079be7dc8bc3268d4a3f24911b2ec6407d))
+* not check balance error if bet is free spin ([be5fd38](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/be5fd387c3cf070c6da628dbb632c28dde11f9a9))
+* not check balance for free spin ([993da3a](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/993da3a52283edd1c88afaf3c10507f3e4ab4daa))
+* remove async for validate balance ([aac06e2](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/aac06e23370662d436640f1af0ef2ae5c056e42f))
+* remove get balance in hit jackpot api ([77b8216](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/77b82162ff34379f0239e0ff14ff5aa0f8e26a2f))
+* update package lock file ([754579e](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/754579ea0bd4f022a8d0befa4e65f7b544f86b03))
+
+
+### Features
+
+* add jackpot hit api ([b9fe258](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/b9fe2580d80f1960d96188ec4bdf58c34f673457))
+
 # [1.9.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.8.1...v1.9.0) (2021-03-02)
 
 
