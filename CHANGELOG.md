@@ -1,3 +1,21 @@
+# [1.11.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.10.0...v1.11.0) (2021-04-06)
+
+
+### Bug Fixes
+
+* api Client import ([3bb170d](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/3bb170d44579a6c1fb13337f4a4068d199457f36))
+* revert babel ([af5414d](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/af5414db8bdcc9d6c73491f7ae52d3dea5de34d6))
+* update package ([f483974](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/f483974dffc1b6ad378814400cf697cbd3fac6dc))
+* update package ([c06d9b5](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/c06d9b5947c1c156b6dc8ce6f1d1d28d289067e0))
+
+
+### Features
+
+* add babel build ([5af795d](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/5af795d39be6ae4a6fae47b36cc14a8a46f68e9f))
+* add GetBetLimit Api ([ff1b92e](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/ff1b92eebd6ca9066deccab6e33d283e06716ab0))
+* send system in params when placebet ([9802cd4](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/9802cd4508e5dfdd7470e614f4b8bf71e52126be))
+* update sc-game-base ([ea77349](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/ea773493982f1435adb183c6c0ba1545abb3ced6))
+
 # [1.10.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.9.0...v1.10.0) (2021-03-17)
 
 
