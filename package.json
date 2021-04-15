@@ -13,7 +13,6 @@
         "betaver": "npm version prerelease --preid beta",
         "pub": "npm publish --registry http://npm.lumigame.com",
         "pubbeta": "npm publish --registry http://npm.lumigame.com --tag beta",
-        "unpub": "npm unpublish --force sc-base-apis",
         "semantic-release": "semantic-release"
     },
     "author": {
