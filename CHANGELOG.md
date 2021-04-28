@@ -1,3 +1,10 @@
+## [1.11.2](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.1...v1.11.2) (2021-04-28)
+
+
+### Bug Fixes
+
+* upgrade sc-base-database ([e8f34e3](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/e8f34e3b2dbf1ec115553bd86e4b7aa801edd4a5))
+
 ## [1.11.1](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.0...v1.11.1) (2021-04-16)
 
 
