@@ -12,6 +12,7 @@ export const getFailedResponse = (response, extraInfo) => {
             isDisabledAccount: true,
         },
     };
+
     const otherResponse = {
         apiError: {
             message: `${response.errorMessage} (${response.errorCode})`,
