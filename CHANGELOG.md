@@ -1,3 +1,10 @@
+## [1.11.3](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.2...v1.11.3) (2021-05-11)
+
+
+### Bug Fixes
+
+* add error code to  response ([595c1b1](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/595c1b190e76909963b8914bd43eded45cc01e91))
+
 ## [1.11.2](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.1...v1.11.2) (2021-04-28)
 
 
