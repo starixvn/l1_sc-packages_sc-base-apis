@@ -32,3 +32,27 @@ export const getCoinBalance = async (user) => {
 
     return apiResult({ isOk: true, response: { red: userInfo.scoins ?? 0 } });
 };
+
+export const validateBalance = async (user, betInfo) => {
+    const betAmount = betInfo.amount;
+    const balance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
+    const balanceError = betInfo.freeSpin ? null : isValidForBet(balance, betAmount);
+
+    if (balanceError) {
+        return balanceError;
+    }
+
+    return balance;
+};
+
+const isValidForBet = (balance, betAmount) => {
+    if (!balance.isOk) {
+        return balance;
+    }
+
+    if (balance.response.red < betAmount) {
+        return apiResult({ isOk: false, response: { inSufficientBalance: true } });
+    }
+
+    return null;
+};
