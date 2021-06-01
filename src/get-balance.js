@@ -36,7 +36,7 @@ export const getCoinBalance = async (user) => {
 export const validateBalance = async (user, betInfo) => {
     const betAmount = betInfo.amount;
     const balance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
-    const balanceError = betInfo.freeSpin ? null : isValidForBet(balance, betAmount);
+    const balanceError = betInfo.freeSpin ? null : isValidForBet(balance, betAmount, betInfo.freeBet);
 
     if (balanceError) {
         return balanceError;
@@ -45,13 +45,15 @@ export const validateBalance = async (user, betInfo) => {
     return balance;
 };
 
-const isValidForBet = (balance, betAmount) => {
+const isValidForBet = (balance, betAmount, freeBet) => {
     if (!balance.isOk) {
         return balance;
     }
 
     if (balance.response.red < betAmount) {
-        return apiResult({ isOk: false, response: { inSufficientBalance: true } });
+        const errorCode = freeBet ? helpers.noticeHelper.notEnoughScoin : helpers.noticeHelper.notEnoughMoney;
+
+        return apiResult({ isOk: false, response: { inSufficientBalance: true, errorCode } });
     }
 
     return null;
