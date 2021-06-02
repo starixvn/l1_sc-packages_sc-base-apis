@@ -1,5 +1,5 @@
 import { userInfos } from "sc-base-database";
-import { logger } from "sc-common";
+import { helpers, logger } from "sc-common";
 
 import * as APIClient from "./api-client";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
