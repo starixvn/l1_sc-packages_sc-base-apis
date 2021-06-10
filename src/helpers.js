@@ -8,6 +8,7 @@ export const getFailedResponse = (response, extraInfo) => {
     const isKickedOut = isDisabledAccountResult(response);
     const kickOutResponse = {
         kickedOut: {
+            errorCode: response.errorCode,
             message: helpers.noticeHelper.closeAccount,
             isDisabledAccount: true,
         },
@@ -15,6 +16,7 @@ export const getFailedResponse = (response, extraInfo) => {
 
     const otherResponse = {
         apiError: {
+            errorCode: response.errorCode,
             message: `${response.errorMessage} (${response.errorCode})`,
             ...extraInfo,
         },

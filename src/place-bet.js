@@ -2,25 +2,18 @@ import { userInfos } from "sc-base-database";
 import { logger } from "sc-common";
 
 import * as APIClient from "./api-client";
-import { getBalance, getCoinBalance } from "./get-balance";
+import { getCoinBalance } from "./get-balance";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const placeBet = async (user, betInfo) => {
     const session = user.session;
-    const betAmount = betInfo.amount;
-    const balance = betInfo.freeBet ? await getCoinBalance(user) : await getBalance(user);
-    const balanceError = betInfo.freeSpin ? null : validateBalance(balance, betAmount);
-
-    if (balanceError) {
-        return balanceError;
-    }
 
     const placeBetParams = {
         SiteId: session.siteId,
         GameRoundId: betInfo.gameRoundId,
         GameTypeId: betInfo.gameId,
         ChoiceId: betInfo.choiceId,
-        Amount: betInfo.freeBet || betInfo.freeSpin ? 0 : betAmount,
+        Amount: betInfo.freeBet || betInfo.freeSpin ? 0 : betInfo.amount,
         Currency: session.currency,
         ObCustId: session.memberId,
         Ip: session.ip,
@@ -34,18 +27,6 @@ export const placeBet = async (user, betInfo) => {
     };
 
     return placeBetWithValidAmount(user, betInfo, placeBetParams);
-};
-
-const validateBalance = (balance, betAmount) => {
-    if (!balance.isOk) {
-        return balance;
-    }
-
-    if (balance.response.red < betAmount) {
-        return apiResult({ isOk: false, response: { inSufficientBalance: true } });
-    }
-
-    return null;
 };
 
 const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
