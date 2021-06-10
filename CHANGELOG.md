@@ -1,3 +1,18 @@
+# [1.12.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.2...v1.12.0) (2021-06-10)
+
+
+### Bug Fixes
+
+* add error code to  response ([9ede9bb](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/9ede9bb5053d68ec52f8c093c586bbd10aa40af8))
+* correct import ([62f36ba](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/62f36bab4a9be61546acdc7d7fa68fd0ab0b87f7))
+* expose validateBalance ([92a9bb7](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/92a9bb7efbb3dcdf59f875f3e12f5155c2886175))
+* update freebet validation ([de76065](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/de76065047abc26cb88efec553a94df49cdccea5))
+
+
+### Features
+
+* separate validate balance from place-bet ([f8fb2ea](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/f8fb2eacf281e438bee32ca76bfc8b8b83194958))
+
 ## [1.11.3](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.2...v1.11.3) (2021-05-11)
 
 
