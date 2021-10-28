@@ -12,6 +12,7 @@ export const hitJackpot = async (user, jackpotInfo) => {
         GameRoundId: jackpotInfo.gameRoundId,
         GameTypeId: jackpotInfo.gameId,
         WinningAmount: jackpotInfo.winningAmount,
+        PartnerId: session.partnerId,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(user.session, hitJackpotParams);

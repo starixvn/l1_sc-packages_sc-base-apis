@@ -10,6 +10,7 @@ export const getBetLimit = async (user) => {
     const getBetLimitParams = {
         ObCustId: session.memberId,
         SiteId: session.siteId,
+        PartnerId: session.partnerId,
     };
     const beforeMessage = logger.composeBeforeCallMessage(session, getBetLimitParams);
     const response = await APIClient.getBetLimit(getBetLimitParams, beforeMessage);
