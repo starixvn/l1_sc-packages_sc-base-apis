@@ -11,6 +11,7 @@ export const getBalance = async (user, captureBalance) => {
         SiteId: session.siteId,
         ObCustId: session.memberId,
         Language: session.language,
+        PartnerId: session.partnerId,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(session, balanceParams);
