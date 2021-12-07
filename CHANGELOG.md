@@ -1,3 +1,22 @@
+# [1.13.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.12.0...v1.13.0) (2021-12-07)
+
+
+### Bug Fixes
+
+* place bet currency info ([b8b5c29](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/b8b5c29eb9a9833bf250b2b6f0f0c31e481e3556))
+
+
+### Features
+
+* add partnerId ([2e2ee3d](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/2e2ee3d7be6c169506e6718a00af38c4cb45f69a))
+* add partnerId when call get balance and notify login ([8b3f494](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/8b3f49406078f758e8848c3bddd34a04158f87ae))
+* update release packages ([0f260e4](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/0f260e46d47966bd5f7bd24999c626cf87018953))
+* update sc-base-database ([2d8ff65](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/2d8ff65605d1e9de7d8449f271e32b3e920b1abf))
+* update sc-base-database ([cf9b4ca](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/cf9b4ca7853039752b87315f686bd46076eccbc5))
+* update sc-base-database ([e811c7d](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/e811c7d0f5c0a7f25fd3f2a1821cc60c303aa70a))
+* update sc-game-base ([8d2d2ee](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/8d2d2eef7b2dfd5952abc60f85e263c4f8477272))
+* upgrade sc-base-database ([4b58561](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/4b585611df65b3607f02f29d66aa8376ed3cf4b8))
+
 # [1.12.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.11.2...v1.12.0) (2021-06-10)
 
 
