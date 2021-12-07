@@ -14,7 +14,7 @@ export const placeBet = async (user, betInfo) => {
         GameTypeId: betInfo.gameId,
         ChoiceId: betInfo.choiceId,
         Amount: betInfo.freeBet || betInfo.freeSpin ? 0 : betInfo.amount,
-        Currency: session.currency,
+        Currency: session.currencyName,
         ObCustId: session.memberId,
         Ip: session.ip,
         Language: session.language,
@@ -24,6 +24,7 @@ export const placeBet = async (user, betInfo) => {
         FreeSpin: betInfo.freeSpin,
         ContributionRate: betInfo.freeSpin ? 0 : betInfo.contributionRate,
         ContributionAmount: betInfo.freeSpin ? 0 : betInfo.contributionAmount,
+        PartnerId: session.partnerId,
     };
 
     return placeBetWithValidAmount(user, betInfo, placeBetParams);

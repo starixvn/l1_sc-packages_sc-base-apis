@@ -7,27 +7,21 @@ let apiSettings = null;
 const errors = {
     placeBetFailed: {
         errorCode: "SB1900",
-        errorMessage: "Đặt cược không thành công.",
     },
     endGameFailed: {
         errorCode: "SB1901",
-        errorMessage: "Phiên chơi bị lỗi. Vui lòng liên hệ bộ phận CSKH để được hỗ trợ.",
     },
     getBalanceFailed: {
         errorCode: "SB1902",
-        errorMessage: "Không thể cập nhật số tiền trong tài khoản.",
     },
     enterPortalFailed: {
         errorCode: `SB1903`,
-        errorMessage: "Đã xảy ra lỗi. Vui lòng liên hệ bộ phận CSKH để đươc hỗ trợ.",
     },
     hitJackpotFailed: {
         errorCode: "SB1904",
-        errorMessage: "Dữ liệu đang được xử lý, giải thưởng Nổ Hũ sẽ được cập nhật vào tài khoản của bạn sau ít phút.",
     },
     accountClosed: {
         errorCode: "2002",
-        errorMessage: "Tài khoản của bạn đã bị khoá.",
     },
 };
 const warningErrorCodes = [3003, 3004, 3006, 3007, 3008, 3009, 3014, 2002, 2005, 3010, 3013, 3002];

@@ -18,6 +18,7 @@ export const endGame = async (userId, gameInfo, settleInfo) => {
             ValidBetAmount: betAmount,
             EndTime: moment.utc(gameInfo.time),
             FreeBet: settleInfo.freeBet,
+            PartnerId: gameInfo.partnerId,
         };
         const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
         const result = await APIClient.endGame(endGameParams, beforeMessage);
