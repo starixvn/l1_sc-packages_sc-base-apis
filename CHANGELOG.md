@@ -1,3 +1,10 @@
+## [1.14.1](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.14.0...v1.14.1) (2021-12-28)
+
+
+### Bug Fixes
+
+* upgrade stable package ([8aab7c6](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/8aab7c61699cf01271aaff5ab9a091cf2172d479))
+
 # [1.14.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.13.0...v1.14.0) (2021-12-28)
 
 
