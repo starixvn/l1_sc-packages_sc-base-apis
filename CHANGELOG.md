@@ -1,3 +1,10 @@
+# [1.14.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.13.0...v1.14.0) (2021-12-28)
+
+
+### Features
+
+* update sc-base-database 1.9.1-beta.0 ([749390d](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/749390d883b76b66e538751ee971cfd4beff4ef9))
+
 # [1.13.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.12.0...v1.13.0) (2021-12-07)
 
 
