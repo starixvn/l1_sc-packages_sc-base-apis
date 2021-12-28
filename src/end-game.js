@@ -34,8 +34,8 @@ export const endGame = async (userId, gameInfo, settleInfo) => {
     }
 
     const redAdjustments = { ...settleInfo };
-
     delete redAdjustments.freeBet;
+    
     await userInfos.updateOne({ id: userId }, { $inc: redAdjustments });
 
     return apiResult({ isOk: true });
