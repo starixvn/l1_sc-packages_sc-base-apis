@@ -5,7 +5,6 @@ import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const hitJackpot = async (user, jackpotInfo) => {
     const session = user.session;
-
     const hitJackpotParams = {
         SiteId: session.siteId,
         ObCustId: session.memberId,

@@ -47,7 +47,6 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
     }
 
     const scoinsIncrement = betInfo.freeBet ? { scoins: -betInfo.amount } : {};
-
     await userInfos.updateOne({ id: user.id }, { $set: { red: response.balance }, $inc: scoinsIncrement });
 
     return apiResult({
