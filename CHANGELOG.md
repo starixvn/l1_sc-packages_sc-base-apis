@@ -1,3 +1,10 @@
+# [1.15.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.14.1...v1.15.0) (2022-01-12)
+
+
+### Features
+
+* valid bet amount - settlement info ([079a4f7](https://git3.nexdev.net/sc-packages/sc-base-apis/commit/079a4f75adbc7048d9db1c65af2f281f22de8ce1))
+
 ## [1.14.1](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.14.0...v1.14.1) (2021-12-28)
 
 
