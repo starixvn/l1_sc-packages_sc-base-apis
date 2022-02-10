@@ -1,3 +1,10 @@
+## [1.15.1](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.15.0...v1.15.1) (2022-02-10)
+
+
+### Bug Fixes
+
+* update format ([b86db22](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/b86db2281eb16fe5365a8d20a7c5e299bf133d1b))
+
 # [1.15.0](https://git3.nexdev.net/sc-packages/sc-base-apis/compare/v1.14.1...v1.15.0) (2022-01-12)
 
 
