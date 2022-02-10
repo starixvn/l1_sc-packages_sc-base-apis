@@ -55,6 +55,7 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
             red: response.balance,
             scoins: (await getCoinBalance(user)).response.red,
             minBet: response.minBet,
+
             maxBet: response.maxBet,
         },
     });
