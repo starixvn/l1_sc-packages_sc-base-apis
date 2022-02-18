@@ -28,6 +28,7 @@ const notifyLoginParams = {
     SiteId: user.session.siteId,
     FirstLogin: false,
     Language: user.session.language,
+    PlayerId: user.session.playerId,
 };
 
 describe("notify login tests", () => {

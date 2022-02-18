@@ -32,6 +32,7 @@ const hitJackpotParams = {
     GameRoundId: jackpotInfo.gameRoundId,
     GameTypeId: jackpotInfo.gameId,
     WinningAmount: jackpotInfo.winningAmount,
+    PlayerId: user.session.playerId,
 };
 
 it("hit jackpot successfully, return correct result", async () => {
