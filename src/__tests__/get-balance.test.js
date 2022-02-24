@@ -27,7 +27,7 @@ const balanceParams = {
     ObCustId: user.session.memberId,
     Language: user.session.language,
 
-    PlayerId: user.session.playerId,
+    PlayerId: user.session.memberId,
 };
 
 const beforeMessage = "before message";

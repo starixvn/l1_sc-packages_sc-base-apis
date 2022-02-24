@@ -13,8 +13,8 @@ export const getBalance = async (user, captureBalance) => {
         Language: session.language,
         PartnerId: session.partnerId,
 
-        OperatorId: session.operatorId,
-        PlayerId: session.playerId,
+        OperatorId: session.partnerId,
+        PlayerId: session.memberId,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(session, balanceParams);

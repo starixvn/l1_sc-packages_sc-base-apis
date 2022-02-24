@@ -15,8 +15,8 @@ export const notifyLogin = async (user, characterName, firstLogin) => {
         Language: session.language,
         PartnerId: session.partnerId,
 
-        OperatorId: session.operatorId,
-        PlayerId: session.playerId,
+        OperatorId: session.partnerId,
+        PlayerId: session.memberId,
     };
     const beforeMessage = logger.composeBeforeCallMessage(session, notifyLoginParams);
     const response = await APIClient.notifyLogin(notifyLoginParams, beforeMessage);
