@@ -1,6 +1,6 @@
 {
     "name": "sc-base-apis",
-    "version": "1.15.1",
+    "version": "1.15.2-beta.2",
     "description": "Saba API client wrapper for Node.js game services.",
     "main": "./src/index.js",
     "publishConfig": {
@@ -25,7 +25,7 @@
     "dependencies": {
         "moment": "^2.27.0",
         "sc-api-client": "^1.3.0",
-        "sc-base-database": "1.9.1",
+        "sc-base-database": "1.9.2",
         "sc-common": "^1.8.0"
     },
     "devDependencies": {

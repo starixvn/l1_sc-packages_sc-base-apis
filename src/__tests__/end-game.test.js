@@ -48,6 +48,9 @@ it("endGame successfully, return correct valid bet amount, update userInfos when
         EndTime: moment.utc(gameInfo.time),
         FreeBet: settlementInfo.freeBet,
         PartnerId: gameInfo.partnerId,
+
+        OperatorId: gameInfo.partnerId,
+        PlayerId: gameInfo.memberId,
     });
     expect(result.isOk).toBeTrue();
     expect(userInfos.updateOne).toHaveBeenCalledWith({ id: userId }, { $inc: { redPlay: settlementInfo.redPlay } });
@@ -69,6 +72,9 @@ it("endGame successfully, return correct valid bet amount, update userInfos when
         EndTime: moment.utc(gameInfo.time),
         FreeBet: settlementInfo.freeBet,
         PartnerId: gameInfo.partnerId,
+
+        OperatorId: gameInfo.partnerId,
+        PlayerId: gameInfo.memberId,
     });
     expect(result.isOk).toBeTrue();
     expect(userInfos.updateOne).toHaveBeenCalledWith({ id: userId }, { $inc: { redPlay: settlementInfo.redPlay } });

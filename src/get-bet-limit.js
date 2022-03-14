@@ -10,6 +10,9 @@ export const getBetLimit = async (user) => {
         ObCustId: session.memberId,
         SiteId: session.siteId,
         PartnerId: session.partnerId,
+
+        OperatorId: session.partnerId,
+        PlayerId: session.memberId,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(session, getBetLimitParams);

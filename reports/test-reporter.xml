@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+    <file path="D:\Nexcel\Luminet\sc-packages\sc-base-apis\src\__tests__\hit-jackpot.test.js">
+        <testCase name="hit jackpot successfully, return correct result" duration="20"/>
+        <testCase name="hit jackpot fail, return correct result with SB1904 error code, log to sentry" duration="2"/>
+        <testCase name="hit jackpot api throw exception, return  result with SB1903 code, not update userInfos, log to sentry" duration="2"/>
+    </file>
+    <file path="D:\Nexcel\Luminet\sc-packages\sc-base-apis\src\__tests__\get-bet-limit.test.js">
+        <testCase name="get bet limit successfully, return correct result, update userInfos" duration="7"/>
+        <testCase name="get bet limit fail, return correct result, not update userInfos, log to sentry" duration="3"/>
+        <testCase name="get bet li mit api throw exception, return  result with SB1903 code, not update userInfos, log to sentry" duration="5"/>
+    </file>
+    <file path="D:\Nexcel\Luminet\sc-packages\sc-base-apis\src\__tests__\place-bet.test.js">
+        <testCase name="normal bet - place bet successfully, return correct result, update userInfos" duration="7"/>
+        <testCase name="place bet fail, return correct result, not update userInfos, log to sentry" duration="3"/>
+        <testCase name="place bet api throw exception, return  result with SB1900 code, not update userInfos, log to sentry" duration="5"/>
+    </file>
+    <file path="D:\Nexcel\Luminet\sc-packages\sc-base-apis\src\__tests__\get-balance.test.js">
+        <testCase name="get balance tests get balance successfully, return correct result, update userInfos" duration="6"/>
+        <testCase name="get balance tests get balance fail, return correct result, not update userInfos, log to sentry" duration="3"/>
+        <testCase name="get balance tests get balance api throw exception, return  result with SB1902 code, not update userInfos, log to sentry" duration="7"/>
+        <testCase name="get balance tests get balance return 2002 error code, return kickedout, not update userInfos, log to sentry" duration="5"/>
+        <testCase name="validate balance tests should return scoin for free bet with valid amount" duration="3"/>
+        <testCase name="validate balance tests should return error when free bet amount &gt; scoins" duration="1"/>
+        <testCase name="validate balance tests normal bet, call get balance and return the balance result" duration="2"/>
+        <testCase name="validate balance tests normal bet, call get balance and return error when bet amount &gt; balance" duration="1"/>
+    </file>
+    <file path="D:\Nexcel\Luminet\sc-packages\sc-base-apis\src\__tests__\notify-login.test.js">
+        <testCase name="notify login tests notify login successfully, return correct result with user stake level, update userInfos" duration="8"/>
+        <testCase name="notify login tests notify login fail, return correct result, not update userInfos, log to sentry" duration="9"/>
+        <testCase name="notify login tests notify login api throw exception, return  result with SB1903 code, not update userInfos, log to sentry" duration="14"/>
+    </file>
+    <file path="D:\Nexcel\Luminet\sc-packages\sc-base-apis\src\__tests__\end-game.test.js">
+        <testCase name="endGame successfully, return correct result, update userInfos" duration="8"/>
+        <testCase name="endGame successfully, return correct valid bet amount, update userInfos when valid bet amount is provided" duration="2"/>
+        <testCase name="endGame successfully, return correct valid bet amount, update userInfos when valid bet amount is NOT provided" duration="17"/>
+        <testCase name="endGame fail, return correct result, not update userInfos, log to sentry" duration="4"/>
+        <testCase name="endGame api throw exception, return  result with SB1901 code, not update userInfos, log to sentry" duration="3"/>
+    </file>
+</testExecutions>
