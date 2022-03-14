@@ -1,3 +1,14 @@
+## [1.15.2](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.15.1...v1.15.2) (2022-03-14)
+
+
+### Bug Fixes
+
+* update db schema ([f3fa914](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/f3fa914b4d3122a1a499f926e650edf221f5a354))
+* upgrade sc-base-database ([1bfa9d4](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/1bfa9d4c53abe619b592f9811372fb60811a1cd6))
+* upgrade sc-base-database@1.9.2 ([4561780](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/456178068c8b33640f470ecc665782a6616de928))
+* upgrade sc-base-database@1.9.2-beta.1 ([16f17c2](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/16f17c2a417cd4dd6b5a80f3dd4f60be6e7db09e))
+* upgrade schema ([21d0923](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/21d0923e4d2feeeeaf8e14f28c7f0d853af06a05))
+
 ## [1.15.1](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.15.0...v1.15.1) (2022-02-10)
 
 
