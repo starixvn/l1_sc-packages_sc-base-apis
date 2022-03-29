@@ -28,6 +28,7 @@ export const placeBet = async (user, betInfo) => {
         PartnerId: session.partnerId,
         OperatorId: session.partnerId,
         PlayerId: session.playerId,
+        OperatorToken: session.OperatorToken,
     };
 
     return placeBetWithValidAmount(user, betInfo, placeBetParams);
