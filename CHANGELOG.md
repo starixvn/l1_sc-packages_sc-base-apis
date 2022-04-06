@@ -1,3 +1,10 @@
+# [1.16.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.15.2...v1.16.0) (2022-04-06)
+
+
+### Features
+
+* add metadata to bet request ([24385c6](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/24385c6f5c546c82e0562afeda7caa8562bf7189))
+
 ## [1.15.2](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.15.1...v1.15.2) (2022-03-14)
 
 
