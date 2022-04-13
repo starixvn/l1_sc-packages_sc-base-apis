@@ -49,7 +49,7 @@ export const init = async (settings) => {
 
 export const getBalance = async (getBalanceParams, beforeMessage) => {
     try {
-        const response = await apiClient.member.balance(getBalanceParams);
+        const response = await apiClient.player.balance(getBalanceParams);
 
         if (isError(response)) {
             logger.logAfterSendToApi(
@@ -77,7 +77,7 @@ export const getBalance = async (getBalanceParams, beforeMessage) => {
 
 export const placeBet = async (placeBetParams = "", beforeMessage = "") => {
     try {
-        const response = await apiClient.member.placeBet(placeBetParams, {
+        const response = await apiClient.player.placeBet(placeBetParams, {
             requestTimeout: apiSettings.placeBetTimeout,
         });
 
@@ -102,7 +102,7 @@ export const placeBet = async (placeBetParams = "", beforeMessage = "") => {
 
 export const endGame = async (endGameParams, beforeMessage) => {
     try {
-        const response = await apiClient.member.endGame(endGameParams);
+        const response = await apiClient.player.endGame(endGameParams);
 
         if (isError(response)) {
             logger.logAfterSendToApi("End Game", endGameParams, response, beforeMessage, getLogLevel(response), apiSettings.enabledApiLogs);
@@ -119,7 +119,7 @@ export const endGame = async (endGameParams, beforeMessage) => {
 
 export const notifyLogin = async (notifyLoginParams, beforeMessage) => {
     try {
-        const response = await apiClient.member.notifyLogin(notifyLoginParams);
+        const response = await apiClient.player.notifyLogin(notifyLoginParams);
 
         if (isError(response)) {
             logger.logAfterSendToApi(
@@ -153,7 +153,7 @@ export const verifyToken = async (verifyTokenParams) => {
 
 export const hitJackpot = async (hitJackpotParams = "", beforeMessage = "") => {
     try {
-        const response = await apiClient.member.hitJackpot(hitJackpotParams, {
+        const response = await apiClient.player.hitJackpot(hitJackpotParams, {
             requestTimeout: apiSettings.hitJackpotTimeout,
         });
 
@@ -181,7 +181,7 @@ export const hitJackpot = async (hitJackpotParams = "", beforeMessage = "") => {
 
 export const getBetLimit = async (getbetLimitParams, beforeMessage) => {
     try {
-        const response = await apiClient.member.getBetLimit(getbetLimitParams);
+        const response = await apiClient.player.getBetLimit(getbetLimitParams);
 
         if (isError(response)) {
             logger.logAfterSendToApi(
