@@ -13,6 +13,7 @@ export const getBetLimit = async (user) => {
 
         OperatorId: session.partnerId,
         PlayerId: session.memberId,
+        OperatorToken: session.operatorToken,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(session, getBetLimitParams);

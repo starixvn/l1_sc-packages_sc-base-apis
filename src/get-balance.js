@@ -15,6 +15,7 @@ export const getBalance = async (user, captureBalance) => {
 
         OperatorId: session.partnerId,
         PlayerId: session.memberId,
+        OperatorToken: session.operatorToken,
     };
 
     const beforeMessage = logger.composeBeforeCallMessage(session, balanceParams);

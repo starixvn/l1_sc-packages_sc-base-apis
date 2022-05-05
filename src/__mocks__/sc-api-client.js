@@ -9,7 +9,7 @@ export const placeBetMockFunc = jest.fn();
 
 const mock = jest.fn().mockImplementation(() => {
     return {
-        member: {
+        player: {
             endGame: endGameMockFunc,
             balance: getBalanceMockFunc,
             getBetLimit: getBetLimitMockFunc,
