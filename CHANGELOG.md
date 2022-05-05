@@ -1,3 +1,18 @@
+# [1.17.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.16.0...v1.17.0) (2022-05-05)
+
+
+### Bug Fixes
+
+* operator token ([ee9187b](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/ee9187b07a9500d4f3f3232dcf54a023bb97606c))
+* rebase master ([08770e0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/08770e07603861140837e122fc8717f1dceab793))
+* rebase master ([0610cf5](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/0610cf508f098f28094a2286d34e08c8b50f1b21))
+* review code ([015073a](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/015073acf82c9994a5e25d8b3a164cd87c1d4ad8))
+
+
+### Features
+
+* upgrade sc-api-client@1.3.1-beta.0 ([ed76d6f](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/ed76d6f8ead6fa74caddd14141c6877f296d7f56))
+
 # [1.16.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.15.2...v1.16.0) (2022-04-06)
 
 
