@@ -43,8 +43,6 @@ const getLogLevel = (response) => {
 export const init = async (settings) => {
     apiSettings = settings;
     apiClient = new APIClient(settings, logger);
-
-    await apiClient.autoUpdateToken();
 };
 
 export const getBalance = async (getBalanceParams, beforeMessage) => {
