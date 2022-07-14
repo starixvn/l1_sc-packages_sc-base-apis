@@ -1,3 +1,10 @@
+## [1.17.2](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.17.1...v1.17.2) (2022-07-14)
+
+
+### Bug Fixes
+
+* change log type for 1001, 1002 ([906b55f](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/906b55f5130de333d35b2b7a0bd7f29e66981f64))
+
 ## [1.17.1](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.17.0...v1.17.1) (2022-07-12)
 
 
