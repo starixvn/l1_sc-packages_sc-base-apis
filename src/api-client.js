@@ -24,7 +24,7 @@ const errors = {
         errorCode: "2002",
     },
 };
-const warningErrorCodes = [3003, 3004, 3006, 3007, 3008, 3009, 3014, 2002, 2005, 3010, 3013, 3002];
+const warningErrorCodes = [3003, 3004, 3006, 3007, 3008, 3009, 3014, 2002, 2005, 3010, 3013, 3002, 1001, 1002];
 const successfulResponse = {
     errorCode: "0",
     errorMessage: "",
