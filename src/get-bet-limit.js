@@ -7,12 +7,9 @@ import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 export const getBetLimit = async (user) => {
     const session = user.session;
     const getBetLimitParams = {
-        ObCustId: session.memberId,
         SiteId: session.siteId,
-        PartnerId: session.partnerId,
-
-        OperatorId: session.partnerId,
-        PlayerId: session.memberId,
+        OperatorId: session.operatorId,
+        PlayerId: session.playerId,
         OperatorToken: session.operatorToken,
     };
 

@@ -13,7 +13,7 @@ init({});
 const user = {
     session: {
         userId: 1,
-        memberId: 1,
+        playerId: 1,
         language: "vi-VN",
         owSeq: "123",
         siteId: "site",
@@ -22,16 +22,14 @@ const user = {
 
 const characterName = "nv01";
 const notifyLoginParams = {
-    ObCustId: user.session.memberId,
     CharacterName: characterName,
     Seq: user.session.owSeq,
     SiteId: user.session.siteId,
     FirstLogin: false,
     Language: user.session.language,
-    PartnerId: undefined,
 
     OperatorId: undefined,
-    PlayerId: user.session.memberId,
+    PlayerId: user.session.playerId,
 };
 
 describe("notify login tests", () => {

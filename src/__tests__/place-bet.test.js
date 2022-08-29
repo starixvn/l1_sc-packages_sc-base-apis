@@ -17,7 +17,7 @@ const user = {
     id: 1,
     session: {
         userId: 1,
-        memberId: 1,
+        playerId: 1,
         language: "vi-VN",
         owSeq: "123",
         siteId: "site",

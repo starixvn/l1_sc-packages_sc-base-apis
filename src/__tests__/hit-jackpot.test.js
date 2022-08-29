@@ -13,7 +13,7 @@ const user = {
     id: 1,
     session: {
         userId: 1,
-        memberId: 1,
+        playerId: 1,
         language: "vi-VN",
         owSeq: "123",
         siteId: "site",
@@ -28,21 +28,19 @@ const jackpotInfo = {
 
 const hitJackpotParams = {
     SiteId: user.session.siteId,
-    ObCustId: user.session.memberId,
     GameRoundId: jackpotInfo.gameRoundId,
     GameTypeId: jackpotInfo.gameId,
     WinningAmount: jackpotInfo.winningAmount,
-    PartnerId: undefined,
 
     OperatorId: undefined,
-    PlayerId: user.session.memberId,
+    PlayerId: user.session.playerId,
 };
 
 it("hit jackpot successfully, return correct result", async () => {
     const expectedResult = {
         errorCode: 0,
         seq: "d8382c1d-6ce0-433d-9233-e7358b10a70b",
-        obCustId: 1,
+        playerId: 1,
         errorMessage: "",
     };
 

@@ -15,7 +15,6 @@ export const placeBet = async (user, betInfo) => {
         ChoiceId: betInfo.choiceId,
         Amount: betInfo.freeBet || betInfo.freeSpin ? 0 : betInfo.amount,
         Currency: session.currencyName,
-        ObCustId: session.memberId,
         Ip: session.ip,
         Language: session.language,
         System: session.system,
@@ -25,8 +24,7 @@ export const placeBet = async (user, betInfo) => {
         ContributionRate: betInfo.freeSpin ? 0 : betInfo.contributionRate,
         ContributionAmount: betInfo.freeSpin ? 0 : betInfo.contributionAmount,
         Metadata: betInfo.metadata,
-        PartnerId: session.partnerId,
-        OperatorId: session.partnerId,
+        OperatorId: session.operatorId,
         PlayerId: session.playerId,
         OperatorToken: session.operatorToken,
     };

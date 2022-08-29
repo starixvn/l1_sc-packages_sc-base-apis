@@ -6,24 +6,22 @@ import * as APIClient from "./api-client";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const endGame = async (userId, gameInfo, settleInfo) => {
-    if (gameInfo.siteId && gameInfo.memberId > 0) {
+    if (gameInfo.siteId && gameInfo.playerId > 0) {
         const betAmount = settleInfo.freeBet ? 0 : settleInfo.redPlay;
         const validBetAmount = settleInfo.validBetAmount;
 
         const endGameParams = {
             GameRoundId: gameInfo.gameRoundId,
             GameTypeId: gameInfo.gameId,
-            ObCustId: gameInfo.memberId,
             SiteId: gameInfo.siteId,
             TotalAmount: betAmount,
             TotalWin: settleInfo.red,
             ValidBetAmount: validBetAmount ?? betAmount,
             EndTime: moment.utc(gameInfo.time),
             FreeBet: settleInfo.freeBet,
-            PartnerId: gameInfo.partnerId,
 
-            OperatorId: gameInfo.partnerId,
-            PlayerId: gameInfo.memberId,
+            OperatorId: gameInfo.operatorId,
+            PlayerId: gameInfo.playerId,
         };
         const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
         const result = await APIClient.endGame(endGameParams, beforeMessage);
