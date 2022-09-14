@@ -1,3 +1,11 @@
+# [1.18.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.17.2...v1.18.0) (2022-09-14)
+
+
+### Features
+
+* remove autoUpdateToken ([c667192](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/c6671927d29a093540de1475a1469c5fb96ec484))
+* remove memberId, obcustId, partnerId ([485ea28](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/485ea280e2bff6e83abe4fd825fe7f95433abf87))
+
 ## [1.17.2](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.17.1...v1.17.2) (2022-07-14)
 
 
