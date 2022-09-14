@@ -14,7 +14,7 @@ init({});
 const gameInfo = {
     gameId: 1,
     gameRoundId: 1,
-    memberId: 123,
+    playerId: 123,
     siteId: "lumi",
     time: new Date(),
 };
@@ -40,17 +40,15 @@ it("endGame successfully, return correct valid bet amount, update userInfos when
     expect(endGameMockFunc).toHaveBeenCalledWith({
         GameRoundId: gameInfo.gameRoundId,
         GameTypeId: gameInfo.gameId,
-        ObCustId: gameInfo.memberId,
         SiteId: gameInfo.siteId,
         TotalAmount: settlementInfo.redPlay,
         TotalWin: settlementInfo.red,
         ValidBetAmount: validBetAmount,
         EndTime: moment.utc(gameInfo.time),
         FreeBet: settlementInfo.freeBet,
-        PartnerId: gameInfo.partnerId,
 
-        OperatorId: gameInfo.partnerId,
-        PlayerId: gameInfo.memberId,
+        OperatorId: gameInfo.operatorId,
+        PlayerId: gameInfo.playerId,
     });
     expect(result.isOk).toBeTrue();
     expect(userInfos.updateOne).toHaveBeenCalledWith({ id: userId }, { $inc: { redPlay: settlementInfo.redPlay } });
@@ -64,17 +62,15 @@ it("endGame successfully, return correct valid bet amount, update userInfos when
     expect(endGameMockFunc).toHaveBeenCalledWith({
         GameRoundId: gameInfo.gameRoundId,
         GameTypeId: gameInfo.gameId,
-        ObCustId: gameInfo.memberId,
         SiteId: gameInfo.siteId,
         TotalAmount: settlementInfo.redPlay,
         TotalWin: settlementInfo.red,
         ValidBetAmount: settlementInfo.redPlay,
         EndTime: moment.utc(gameInfo.time),
         FreeBet: settlementInfo.freeBet,
-        PartnerId: gameInfo.partnerId,
 
-        OperatorId: gameInfo.partnerId,
-        PlayerId: gameInfo.memberId,
+        OperatorId: gameInfo.operatorId,
+        PlayerId: gameInfo.playerId,
     });
     expect(result.isOk).toBeTrue();
     expect(userInfos.updateOne).toHaveBeenCalledWith({ id: userId }, { $inc: { redPlay: settlementInfo.redPlay } });

@@ -14,7 +14,7 @@ const user = {
     id: 1,
     session: {
         userId: 1,
-        memberId: 1,
+        playerId: 1,
         language: "vi-VN",
         owSeq: "123",
         siteId: "site",
@@ -24,10 +24,9 @@ const user = {
 const balanceParams = {
     Seq: user.session.owSeq,
     SiteId: user.session.siteId,
-    ObCustId: user.session.memberId,
     Language: user.session.language,
 
-    PlayerId: user.session.memberId,
+    PlayerId: user.session.playerId,
 };
 
 const beforeMessage = "before message";

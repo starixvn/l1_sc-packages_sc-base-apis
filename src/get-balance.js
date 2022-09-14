@@ -9,12 +9,10 @@ export const getBalance = async (user, captureBalance) => {
     const balanceParams = {
         Seq: session.owSeq,
         SiteId: session.siteId,
-        ObCustId: session.memberId,
         Language: session.language,
-        PartnerId: session.partnerId,
 
-        OperatorId: session.partnerId,
-        PlayerId: session.memberId,
+        OperatorId: session.operatorId,
+        PlayerId: session.playerId,
         OperatorToken: session.operatorToken,
     };
 
