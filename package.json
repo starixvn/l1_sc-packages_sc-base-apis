@@ -25,7 +25,7 @@
     "dependencies": {
         "moment": "^2.27.0",
         "sc-api-client": "1.4.0",
-        "sc-base-database": "1.10.1",
+        "sc-base-database": "1.11.2-beta.0",
         "sc-common": "1.8.1"
     },
     "devDependencies": {
