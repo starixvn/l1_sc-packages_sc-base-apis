@@ -1,4 +1,3 @@
-import { userInfos } from "sc-base-database";
 import { logger } from "sc-common";
 
 import * as APIClient from "./api-client";
@@ -21,11 +20,6 @@ export const notifyLogin = async (user, characterName, firstLogin) => {
 
     if (isErrorResult(response)) {
         return getFailedResponse(response);
-    }
-
-    const { minBet, maxBet } = response;
-    if (minBet > 0 && maxBet > 0) {
-        await userInfos.updateOne({ id: session.userId }, { minBet, maxBet, betLimitModifiedDate: new Date() });
     }
 
     return apiResult({ isOk: true, response });

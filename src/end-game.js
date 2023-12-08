@@ -1,5 +1,4 @@
 import moment from "moment";
-import { userInfos } from "sc-base-database";
 import { logger } from "sc-common";
 
 import * as APIClient from "./api-client";
@@ -39,8 +38,6 @@ export const endGame = async (userId, gameInfo, settleInfo) => {
     const redAdjustments = { ...settleInfo };
     delete redAdjustments.freeBet;
     delete redAdjustments.validBetAmount;
-
-    await userInfos.updateOne({ id: userId }, { $inc: redAdjustments });
 
     return apiResult({ isOk: true });
 };

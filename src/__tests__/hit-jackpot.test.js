@@ -4,7 +4,6 @@ import { logger } from "sc-common";
 import { hitJackpot } from "../hit-jackpot";
 
 jest.mock("sc-common");
-jest.mock("sc-base-database");
 jest.mock("sc-api-client");
 
 init({});

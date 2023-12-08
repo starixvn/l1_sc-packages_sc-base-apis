@@ -1,8 +1,6 @@
-import { userInfos } from "sc-base-database";
 import { logger } from "sc-common";
 
 import * as APIClient from "./api-client";
-import { getCoinBalance } from "./get-balance";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const placeBet = async (user, betInfo) => {
@@ -48,14 +46,10 @@ const placeBetWithValidAmount = async (user, betInfo, placeBetParams) => {
         return getFailedResponse(response, extraFailedData);
     }
 
-    const scoinsIncrement = betInfo.freeBet ? { scoins: -betInfo.amount } : {};
-    await userInfos.updateOne({ id: user.id }, { $set: { red: response.balance }, $inc: scoinsIncrement });
-
     return apiResult({
         isOk: true,
         response: {
             red: response.balance,
-            scoins: (await getCoinBalance(user)).response.red,
             minBet: response.minBet,
             maxBet: response.maxBet,
         },
