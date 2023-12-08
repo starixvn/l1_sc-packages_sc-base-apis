@@ -35,9 +35,5 @@ export const endGame = async (userId, gameInfo, settleInfo) => {
         }
     }
 
-    const redAdjustments = { ...settleInfo };
-    delete redAdjustments.freeBet;
-    delete redAdjustments.validBetAmount;
-
     return apiResult({ isOk: true });
 };

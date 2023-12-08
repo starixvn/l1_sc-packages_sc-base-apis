@@ -3,7 +3,7 @@ import { logger } from "sc-common";
 import * as APIClient from "./api-client";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
-export const getBalance = async (user, captureBalance) => {
+export const getBalance = async (user) => {
     const session = user.session;
     const balanceParams = {
         Seq: session.owSeq,

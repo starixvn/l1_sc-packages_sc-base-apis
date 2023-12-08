@@ -52,7 +52,7 @@ describe("get-balance", () => {
                 result: expectedResult,
             });
 
-            const result = await getBalance(user, true);
+            const result = await getBalance(user);
 
             expect(result).toEqual({ isOk: true, response: { red: expectedResult.balance, ...expectedResult } });
             expect(getBalanceMockFunc).toHaveBeenCalledWith(balanceParams);
