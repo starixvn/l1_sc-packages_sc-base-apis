@@ -6,7 +6,7 @@ import * as APIClient from "./api-client";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const endGame = async (userId, gameInfo, settleInfo) => {
-    if (gameInfo.siteId && gameInfo.playerId > 0) {
+    if (gameInfo.siteId && gameInfo.playerId) {
         const betAmount = settleInfo.freeBet ? 0 : settleInfo.redPlay;
         const validBetAmount = settleInfo.validBetAmount;
 
