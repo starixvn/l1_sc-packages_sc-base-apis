@@ -1,3 +1,25 @@
+# [2.0.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.18.1...v2.0.0) (2024-01-17)
+
+
+### Bug Fixes
+
+* check playerId has value instead of > 0 ([04cc7cd](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/04cc7cd497913da9fcf559bc593e6bcb1b35ab7c))
+* remove unused code ([a055773](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/a055773fa5c498adc5ba9d5ca322ba9ae27a6004))
+* remove unused codes ([8fd8f6e](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/8fd8f6e762854e758b7a2869b430ee9d8fe67b4d))
+* use core cicd ([baf5138](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/baf5138f758f69f22541aa513c6f0969e72075d9))
+
+
+### Features
+
+* add session.userId to place bet params ([96f7c5a](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/96f7c5a89b52e27818fcb9741a58795b885f8aa4))
+* decouple from database (sc-game-database) ([d77200b](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/d77200b034d498ff2531a679f2487528847ff028))
+* remove sc-game-database package ([5bc3487](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/5bc3487794120e5ff86fdd7385f6afdfac08bb2b))
+
+
+### BREAKING CHANGES
+
+* decouple from database
+
 ## [1.18.1](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.18.0...v1.18.1) (2023-03-15)
 
 
