@@ -1,5 +1,3 @@
-import { helpers } from "sc-common";
-
 export const isDisabledAccountResult = (result) => result.errorCode === 2002;
 
 export const isErrorResult = (result) => result.errorCode !== 0;
