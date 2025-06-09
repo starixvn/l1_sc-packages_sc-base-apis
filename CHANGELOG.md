@@ -1,3 +1,10 @@
+# [2.1.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v2.0.0...v2.1.0) (2025-06-09)
+
+
+### Features
+
+* hitJackpot Api - add siteName to request's body ([455f385](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/455f3858867fc95c548b55466d55eefe671c16a8))
+
 # [2.0.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v1.18.1...v2.0.0) (2024-01-17)
 
 
