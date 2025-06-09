@@ -7,6 +7,7 @@ export const hitJackpot = async (user, jackpotInfo) => {
     const session = user.session;
     const hitJackpotParams = {
         SiteId: session.siteId,
+        SiteName: session.siteName,
         GameRoundId: jackpotInfo.gameRoundId,
         GameTypeId: jackpotInfo.gameId,
         WinningAmount: jackpotInfo.winningAmount,
