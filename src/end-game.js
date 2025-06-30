@@ -6,7 +6,7 @@ import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
 export const endGame = async (userId, gameInfo, settleInfo, metaData) => {
     if (gameInfo.siteId && gameInfo.playerId) {
-        const betAmount = settleInfo.freeBet ? 0 : settleInfo.redPlay;
+        const betAmount = settleInfo.redPlay;
         const validBetAmount = settleInfo.validBetAmount;
 
         const endGameParams = {
