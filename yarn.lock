@@ -7810,10 +7810,10 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-sc-api-client@1.4.0:
-  version "1.4.0"
-  resolved "https://npm.lumigame.com/sc-api-client/-/sc-api-client-1.4.0.tgz#74642168b4a07c6a53c32e8d5175758bdd166620"
-  integrity sha512-Hp6kmKufWQM2KuCdog8pGkjEW5qqGaN1SzKq1jAI/jnrZsevAWMXLS3OU37GHt1ySgI1rEpDxjacOMfXfIfgng==
+sc-api-client@1.4.1-beta.0:
+  version "1.4.1-beta.0"
+  resolved "https://npm.lumigame.com/sc-api-client/-/sc-api-client-1.4.1-beta.0.tgz#606cb8e14012b209c46d19ab7564199ec2f2e2dd"
+  integrity sha512-C94VVn6nvRNv84YSqJZNc7r1+9BGZpEVjkbNOqHkNhpJ4vxVWTJiLzk0/lDAYgX+5pACBvWUag8nrOSBQuELcQ==
   dependencies:
     axios "^0.19.2"
 

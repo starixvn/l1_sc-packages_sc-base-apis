@@ -23,6 +23,9 @@ const errors = {
     accountClosed: {
         errorCode: "2002",
     },
+    awardFailed: {
+        errorCode: "SB1905",
+    },
 };
 const warningErrorCodes = [3003, 3004, 3006, 3007, 3008, 3009, 3014, 2002, 2005, 3010, 3013, 3002, 1001, 1002];
 
@@ -194,5 +197,22 @@ export const getBetLimit = async (getbetLimitParams, beforeMessage) => {
         logger.logError(error);
 
         return errors.enterPortalFailed;
+    }
+};
+
+export const award = async (awardParams, beforeMessage) => {
+    try {
+        const response = await apiClient.player.award(awardParams);
+
+        if (isError(response)) {
+            logger.logAfterSendToApi("Award", awardParams, response, beforeMessage, getLogLevel(response), apiSettings.enabledApiLogs);
+        }
+
+        return response.result;
+    } catch (error) {
+        logger.logAfterSendToApi("Error Award", awardParams, error, beforeMessage, "error", apiSettings.enabledApiLogs);
+        logger.logError(error);
+
+        return errors.awardFailed;
     }
 };

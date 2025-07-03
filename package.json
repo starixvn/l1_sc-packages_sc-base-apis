@@ -24,7 +24,7 @@
     "type": "module",
     "dependencies": {
         "moment": "^2.29.4",
-        "sc-api-client": "1.4.0",
+        "sc-api-client": "1.4.1-beta.0",
         "sc-common": "1.8.1"
     },
     "devDependencies": {
