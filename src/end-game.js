@@ -22,6 +22,7 @@ export const endGame = async (userId, gameInfo, settleInfo, metaData) => {
             OperatorId: gameInfo.operatorId,
             PlayerId: gameInfo.playerId,
             PromotionId: settleInfo.promotionId,
+            SiteName: gameInfo.siteName,
             MetaData: metaData
         };
         const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
