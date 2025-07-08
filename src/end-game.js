@@ -4,7 +4,7 @@ import { logger } from "sc-common";
 import * as APIClient from "./api-client";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
-export const endGame = async (userId, gameInfo, settleInfo) => {
+export const endGame = async (userId, gameInfo, settleInfo, metaData) => {
     if (gameInfo.siteId && gameInfo.playerId) {
         const betAmount = settleInfo.freeBet ? 0 : settleInfo.redPlay;
         const validBetAmount = settleInfo.validBetAmount;
@@ -21,6 +21,7 @@ export const endGame = async (userId, gameInfo, settleInfo) => {
 
             OperatorId: gameInfo.operatorId,
             PlayerId: gameInfo.playerId,
+            MetaData: metaData
         };
         const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
         const result = await APIClient.endGame(endGameParams, beforeMessage);
