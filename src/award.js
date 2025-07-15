@@ -1,3 +1,4 @@
+import { logger } from "sc-common";
 import * as APIClient from "./api-client";
 import { apiResult, getFailedResponse, isErrorResult } from "./helpers";
 
