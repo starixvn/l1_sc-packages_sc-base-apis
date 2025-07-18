@@ -1,3 +1,10 @@
+# [2.2.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v2.1.0...v2.2.0) (2025-07-18)
+
+
+### Features
+
+* add metadata for end game ([77e1ad4](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/commit/77e1ad4bc221b3146efac6a36ecf2084e7a5a63b))
+
 # [2.1.0](https://git3.nexdev.net/l1/sc-packages/sc-base-apis/compare/v2.0.0...v2.1.0) (2025-06-09)
 
 
