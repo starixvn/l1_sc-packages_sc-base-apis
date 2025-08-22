@@ -1,4 +1,7 @@
 include:
-  - project: ci/core-cicd
-    ref: main
-    file: luminet.gitlab-ci.yml
+    - project: ci/core-cicd
+      ref: main
+      file: luminet.gitlab-ci.yml
+
+publish_npm:
+    image: hub.lumigame.com/base/node:18-alpine-25h2
