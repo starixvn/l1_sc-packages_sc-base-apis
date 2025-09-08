@@ -23,7 +23,8 @@ export const endGame = async (userId, gameInfo, settleInfo, metaData) => {
             PlayerId: gameInfo.playerId,
             PromotionId: settleInfo.promotionId,
             SiteName: gameInfo.siteName,
-            MetaData: metaData
+            MetaData: metaData,
+            BaseTotalAmount: settleInfo.baseTotalAmount,
         };
         const beforeMessage = logger.composeBeforeCallMessage({ userId }, endGameParams, true);
         const result = await APIClient.endGame(endGameParams, beforeMessage);
