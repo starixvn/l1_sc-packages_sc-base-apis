@@ -25,5 +25,5 @@ export const award = async (user, awardInfo) => {
         return getFailedResponse(result, extraFailedData);
     }
 
-    return apiResult({ isOk: true });
+    return apiResult({ isOk: true, response: result });
 };
